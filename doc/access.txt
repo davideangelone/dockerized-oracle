@@ -1,0 +1,34 @@
+Connect database with following setting:
+
+hostname: localhost
+port: 49161
+sid: xe
+username: system
+password: oracle
+
+
+Password for SYS & SYSTEM :
+oracle
+
+
+APEX:
+----
+1)
+# Login
+http://localhost:48080/apex/apex_admin with following credential:
+
+username: ADMIN
+password: admin 
+
+
+2)
+For latest APEX(18.1) user, please pull oracleinanutshell/oracle-xe-11g:18.04-apex first:
+
+docker run -d -p 49161:1521 -p 48080:8080 oracleinanutshell/oracle-xe-11g:18.04-apex
+
+# 
+Login 
+http://localhost:48080/apex/apex_admin with following credential:
+
+username: ADMIN
+password: Oracle_11g
