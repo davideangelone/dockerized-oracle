@@ -1,0 +1,14 @@
+Per esportare tablespace e schemi da un DB Oracle
+
+1)
+da SQLPLUS
+CREATE OR REPLACE DIRECTORY oracle_dump AS '<path>\EXPORT_SCHEMAS';
+
+2) [Per esportare il tablespace <tablespace_name>]
+EXPDP TABLESPACES=<tablespace_name> DIRECTORY=oracle_dump DUMPFILE=expdat.dmp
+
+3)
+EXPDP SCHEMAS=<schemas to export> DIRECTORY=oracle_dump DUMPFILE=expdat.dmp
+
+4) (user: system - password: oracle)
+impdp [directory=/u01/app/oracle/admin/XE/dpdump]
